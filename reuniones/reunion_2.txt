@@ -1,0 +1,16 @@
+7 de noviembre
+
+cld banda de nubes
+
+probar con L1C y L2A
+
+pasar coordenadas de imágenes a pixeles, para identificar las ubicaciones de los sensores
+
+src.meta
+
+lonlat -> epsg/32719 (easting-northing) -> pixel position
+
+
+Se mostraron los avances del trabajo, es decir, los crops extraidos usando tsd con las coordenadas del campo, y algunos metadatos extraidos de los crops con el fin de poder compararlos con los datos de los sensores con la referencia de la fecha y hora.
+
+Se quedó en identificar los sensores en el campo usando georreferenciación, además de ver la posibilidad de bajar las bandas que contienen los datos de las imágenes con nubes para asi posibilitar su descarte en el análisis. Tambien se mencionó por parte del profesor Enric que usaramos las bandas L1C y L2A para el análisis, ya que el tipo de imágenes eran distintas y la información de cada una de ellas podia variar. Para la transformación de coordenadas se debe pasar primer de latitud/longitud al sistema epsg/32719 (easting-northing) y luego con esas coordenadas poder hacer la transformación a pixeles, para finalmente marcar los pixeles correspondientes a los sensores en la imagen.

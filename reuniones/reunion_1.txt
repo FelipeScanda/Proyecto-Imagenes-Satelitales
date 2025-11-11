@@ -1,0 +1,4 @@
+29 de octubre
+
+Se mostraron los avances, siendo estos el código que recibe una imagen con sus componentes RGB y los une en una sola imagen para poder visualizarla.
+Quedamos en hacer el recorte de una imagen para visualizar solo la parte de interés, teniendo asi una imagen mas liviana y fácil de ver.

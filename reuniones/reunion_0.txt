@@ -1,0 +1,4 @@
+27 de octubre
+
+Abordamos de manera inicial la problemática y los pasos a seguir. Vimos ejemplos de imágenes y sus respectivas bandas, para realizar el análisis correspondiente.
+Quedamos en descargar una imagen desde copernicus browser y unir sus bandas RGB para lograr una visualización correcta.
