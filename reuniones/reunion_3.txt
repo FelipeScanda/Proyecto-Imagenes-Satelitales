@@ -1,0 +1,5 @@
+14 de noviembre
+
+Mostramos los avances de la semana, donde se obtiene una imagen y todos los sensores marcados con un pixel rojo para poder reconocerlos mejor.
+
+Quedamos en centrarnos en un solo sensor para obtener los valores de su ubicación en todas las bandas en una serie de tiempo, idealmente que sea un sensor ubicado en el medio para evitar que los valores de los bordes interrumpan. La idea es que dado un sensor y su ubicación dentro de la imagen, poder obtener los valores de todas las bandas y guardarlos en un archivo, para empezar a construir una base de datos y empezar a ver si es que existe correlación. Al mencionar que se tuvo problemas al bajar las imágenes L1C, se mencionó por parte del profesor Enric que existía la posibilidad de bajar las imágenes de otro satélite, el Landsat-8, para así poder tener más imágenes y por lo tanto más información para analizar, sin embargo, hay que tener cuidado ya que los nombres de las bandas son distintos a los del Sentinel, por lo que se debe estar atento para no confundirse.
