@@ -1,3 +1,5 @@
+28 de noviembre
+
 Presentamos el estado del arte del tema, que fueron acerca de 2 papers obtenidos.
 
 Para medicion, fijarse en las temperaturas minima y maxima. Horas frio. Para resumir la informacion de toda la semana y comparar con la información del satélite. Estándar son horas frio. 
