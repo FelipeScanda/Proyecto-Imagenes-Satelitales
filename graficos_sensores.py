@@ -4,11 +4,9 @@ import seaborn as sns
 import os
 
 # CONFIGURACIÓN
-csv_path = "./agritorre_2_months.csv/agritorre_2_months.csv"   # Cambia esta ruta si es necesario
+csv_path = "./agritorre_2_months.csv/agritorre_2_months.csv"
 sensor_id = "eui-a8404173735a97b9"
 plots_dir = "plots"
-
-sns.set(style="whitegrid")
 
 # Crear carpeta si no existe
 os.makedirs(plots_dir, exist_ok=True)
@@ -19,9 +17,6 @@ df = pd.read_csv(csv_path)
 # Filtrar sensor
 df_sensor = df[df["sensor_device_id"] == sensor_id].copy()
 
-if df_sensor.empty:
-    raise ValueError(f"No se encontraron datos para el sensor {sensor_id}")
-
 # PROCESAR FECHA
 df_sensor["time_sensor_tx_local"] = pd.to_datetime(
     df_sensor["time_sensor_tx_local"], errors="coerce", utc=True
@@ -29,7 +24,7 @@ df_sensor["time_sensor_tx_local"] = pd.to_datetime(
 
 df_sensor = df_sensor.dropna(subset=["time_sensor_tx_local"])
 
-# Quitar timezone → formato compatible con Matplotlib
+# Quitar timezone -> formato compatible con Matplotlib
 df_sensor["time_sensor_tx_local"] = df_sensor["time_sensor_tx_local"].dt.tz_convert(None)
 
 # Seleccionar variables relevantes

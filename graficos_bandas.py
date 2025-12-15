@@ -3,20 +3,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-# =========================
 # CONFIGURACIÓN
-# =========================
-csv_path = "pixeles_por_banda.csv"   # Cambiar si es necesario
+csv_path = "valores_pixeles.csv"
 plots_dir = "plots_pixeles"
-
-sns.set(style="whitegrid")
 
 # Crear carpeta si no existe
 os.makedirs(plots_dir, exist_ok=True)
 
-# =========================
 # CARGAR DATASET
-# =========================
 df = pd.read_csv(csv_path)
 
 # Convertir fecha
@@ -24,9 +18,7 @@ df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce", utc=True)
 df = df.dropna(subset=["fecha"])
 df["fecha"] = df["fecha"].dt.tz_convert(None)
 
-# =========================
 # ESTADÍSTICAS DESCRIPTIVAS
-# =========================
 stats = df.groupby("nombre_banda")["valor_pixel"].describe()
 
 print("\n===== Estadísticas descriptivas por banda =====")
@@ -35,9 +27,7 @@ print(stats)
 # Guardar estadísticas en CSV
 stats.to_csv(os.path.join(plots_dir, "estadisticas_pixeles.csv"))
 
-# =========================
 # 1) Serie temporal por banda
-# =========================
 for banda in df["nombre_banda"].unique():
     sub = df[df["nombre_banda"] == banda]
 
@@ -54,9 +44,7 @@ for banda in df["nombre_banda"].unique():
     plt.close()
     print(f"Guardado: {save_path}")
 
-# =========================
 # 2) Histogramas por banda
-# =========================
 for banda in df["nombre_banda"].unique():
     sub = df[df["nombre_banda"] == banda]
 
@@ -73,9 +61,7 @@ for banda in df["nombre_banda"].unique():
 
     print(f"Guardado: {save_path}")
 
-# =========================
 # 3) Correlación entre bandas
-# =========================
 pivot = df.pivot_table(
     index="fecha",
     columns="nombre_banda",
