@@ -4,10 +4,8 @@ import seaborn as sns
 import os
 
 # CONFIGURACIÓN
-csv_path = "pixeles_por_banda.csv"   # Cambiar si es necesario
+csv_path = "valores_pixeles.csv"
 plots_dir = "plots_pixeles"
-
-sns.set(style="whitegrid")
 
 # Crear carpeta si no existe
 os.makedirs(plots_dir, exist_ok=True)

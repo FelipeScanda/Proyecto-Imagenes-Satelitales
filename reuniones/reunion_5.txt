@@ -1,0 +1,9 @@
+19 de diciembre
+
+Mostramos los avances de las semanas. Mostramos los gráficos de horas frio y temperatura vs los valores de las bandas. Una observación, algunos valores de las bandas son muy altos, lo que puede significar que hayan nubes. Crear un código que filtre y omita estos valores antes de empezar a hacer las correlaciones.
+
+Los datos de 2 meses probablemente no servirán para correlaciones solidas, por lo que deberemos trabajar con los datos de 2 años de los sensores.
+
+Quedamos en crear el filtro de los valores de las nubes. Crear los gráficos de las temperaturas promedio, mínimas y máximas de cada semana, junto con las horas frio de cada semana (no acumuladas) para empezar a hacer las correlaciones.
+
+Opcional y si queda tiempo, trabajar los valores como resultado de una interpolación entre los 4 pixeles vecinos mas cercanos para mejorar la solidez de los datos.
