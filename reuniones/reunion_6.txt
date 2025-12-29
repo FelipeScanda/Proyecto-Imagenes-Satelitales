@@ -1,0 +1,3 @@
+29 de diciembre
+
+Vimos usar los filtros de SCL para filtrar ls nubes. No funcionan del todo bien, asi que también seria bueno agregar un filtro manual viendo qué valor se adecúa mejor para filtrar los valores altos.
