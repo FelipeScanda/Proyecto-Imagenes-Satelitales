@@ -21,10 +21,28 @@ df_merged = df_bandas.merge(
 #Filtrar los valores cuyo SCL sea 8 o 9 (prob. de nubes)
 nube = [8, 9]
 
-df_merged["valor_filtrado"] = np.where(
-    df_merged["SCL"].isin(nube),
-    np.nan,
-    df_merged["valor_pixel"]
+umbrales = {
+    "B01": 2000,
+    "B02": 2000,
+    "B03": 2000,
+    "B04": 2000,
+    "B05": 2000,
+    "B06": 2500,
+    "B07": 2500,
+    "B08": 2500,
+    "B09": 2500,
+    "B11": 3500,
+    "B12": 3000
+}
+
+df_merged["valor_filtrado"] = df_merged.apply(
+    lambda r: np.nan
+    if (
+        r["SCL"] in nube or
+        (r["nombre_banda"] in umbrales and r["valor_pixel"] > umbrales[r["nombre_banda"]])
+    )
+    else r["valor_pixel"],
+    axis=1
 )
 
 #Guardar en csv.
